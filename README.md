@@ -1,4 +1,4 @@
-# Elosia API For Mobile Apps
+# Elousia API For Mobile Apps
 
 🎉 **My First API Development Project!**
 
