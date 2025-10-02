@@ -1,0 +1,754 @@
+{
+	"info": {
+		"_postman_id": "15083083-7d15-4130-af1f-c96d0dc992e0",
+		"name": "Elouisa API V1",
+		"description": "This is ElElousia_API V1.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38596446"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sohan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sohag@test.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "232348252473",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/register"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "sohag@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/login"
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "sohag@test.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/forgot-password"
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "token",
+									"value": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://127.0.0.1:8000/api/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\": \"0JeWtfhjv9ShFe3jM1WVKD2z8JC8NKk2z8UmsX7dC51v8VGFXveO6ZUHMEtn\",\r\n  \"password\": \"newpass123\",\r\n  \"password_confirmation\": \"newpass123\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/reset-password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home Page",
+			"item": [
+				{
+					"name": "home",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/home"
+					},
+					"response": []
+				},
+				{
+					"name": "live-tvs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/live-tvs"
+					},
+					"response": []
+				},
+				{
+					"name": "live-tvs with Category Base Filter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/live-tvs?category_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"live-tvs"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/movies"
+					},
+					"response": []
+				},
+				{
+					"name": "movies with category base filtering",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/movies?category_id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"movies"
+							],
+							"query": [
+								{
+									"key": "category_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "me3kg9GRbKaeokxxLkG30NMbr7El4AbjVElf9joN11ozLBjoCNvVWj2j5U9ki0YrTDP5mKnUKKqqhZa7"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/search?query=Sq",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "Sq"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Details Page",
+			"item": [
+				{
+					"name": "Movie / Series / Event Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/details/movie/5"
+					},
+					"response": []
+				},
+				{
+					"name": "radio details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/radio/details/2"
+					},
+					"response": []
+				},
+				{
+					"name": "live tv play",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/live-tv/details/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Video Play (Movie / Series / Event)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/play/movie/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Entertainment Page",
+			"item": [
+				{
+					"name": "entertainment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/entertainment"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Elokidz Page",
+			"item": [
+				{
+					"name": "Elokidz Category List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/elokidz/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Elokidz category base showing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/elokidz/category/2/movies"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Radio Page",
+			"item": [
+				{
+					"name": "radios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://127.0.0.1:8000/api/radios"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Download Item",
+			"item": [
+				{
+					"name": "download item",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/download/movie/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification Part",
+			"item": [
+				{
+					"name": "notifications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/notifications"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pages",
+			"item": [
+				{
+					"name": "faqs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/faqs"
+					},
+					"response": []
+				},
+				{
+					"name": "about-us",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/about-us"
+					},
+					"response": []
+				},
+				{
+					"name": "help-and-support",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/help-and-support"
+					},
+					"response": []
+				},
+				{
+					"name": "terms-and-conditions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/terms-and-conditions"
+					},
+					"response": []
+				},
+				{
+					"name": "privacy-policy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/api/privacy-policy"
+					},
+					"response": []
+				},
+				{
+					"name": "contact-us",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Abul Basar\",\r\n  \"email\": \"abul@example.com\",\r\n  \"message\": \"I need help with my account.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/contact-us"
+					},
+					"response": []
+				},
+				{
+					"name": "feedback",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Basar\",\r\n  \"email\": \"abulss@example.com\",\r\n  \"rating\": 5,\r\n  \"message\": \"Great app!\"\r\n}\r\n"
+						},
+						"url": "http://localhost:8000/api/feedback"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Plans Part",
+			"item": [
+				{
+					"name": "plans",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Basar\",\r\n  \"email\": \"abulss@example.com\",\r\n  \"rating\": 5,\r\n  \"message\": \"Great app!\"\r\n}\r\n"
+						},
+						"url": "http://localhost:8000/api/plans"
+					},
+					"response": []
+				},
+				{
+					"name": "subscription",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Basar\",\r\n  \"email\": \"abulss@example.com\",\r\n  \"rating\": 5,\r\n  \"message\": \"Great app!\"\r\n}\r\n"
+						},
+						"url": "http://localhost:8000/api/subscription/1"
+					},
+					"response": []
+				},
+				{
+					"name": "cancel-subscription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": "http://localhost:8000/api/subscription/cancel/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Pay with Stripe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plan_id\": 2,\r\n  \"user_id\": 5\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/api/payment/stripe"
+					},
+					"response": []
+				},
+				{
+					"name": "Pay with Sentoo",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plan_id\": 3\r\n}\r\n"
+						},
+						"url": "http://localhost:8000/api/payment/sentoo"
+					},
+					"response": []
+				},
+				{
+					"name": "Payment Success Handler",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plan_id\": 2,\r\n  \"transaction_id\": \"txn_64f5e12345\",\r\n  \"amount\": 10,\r\n  \"method\": \"stripe\",\r\n  \"user_id\": 5\r\n}\r\n"
+						},
+						"url": "http://localhost:8000/api/payment/success"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "My Account",
+			"item": [
+				{
+					"name": "my-account",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plan_id\": 3\r\n}\r\n"
+						},
+						"url": "http://localhost:8000/api/my-account/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Update account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "POST MAN",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "post@man.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+8801987654321",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/api/update-account/5"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
