@@ -72,4 +72,12 @@ This is a complete API backend for an OTT platform, built with **Laravel**. It p
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/engineersohag/ott-saas-api.git
+git clone https://github.com/engineersohag/Elousia-API-For-Mobile-Apps.git
+```
+
+## 👤 Author
+
+Sohag Hosen
+LinkedIn: [LINKEDIN](https://www.linkedin.com/in/its-engineer-sohag/)
+
+First API Development Project 🎉
